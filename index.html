@@ -1,0 +1,2792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- AOS CSS Link -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <title>Harshani | Miss</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Font (Sinhala and English) -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700;800&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+}
+body{
+    background-color: black;
+}
+
+/* Hero Section (Full Screen) */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* PC වලට */
+  height: 100dvh; /* Mobile screen එකට හරියටම ෆිට් වෙන්න */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 8%;
+}
+
+/* Background Photo Slider Container */
+.bg-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Slides Base Styling */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: slideAnimation 16s infinite; /* 4 Photos x 4 Seconds = 16s cycle */
+}
+
+/* ඡායාරූප 4 හි Image Links (මෙතනට ඔයාගේ Photo Links දාන්න) */
+.slide-1 {
+  background-image: url('t1.jpg');
+  animation-delay: 0s;
+}
+
+.slide-2 {
+  background-image: url('t2.jpg');
+  animation-delay: 4s;
+}
+
+.slide-3 {
+  background-image: url('t3.jpg');
+  animation-delay: 8s;
+}
+
+.slide-4 {
+  background-image: url('t4.jpg');
+  animation-delay: 12s;
+}
+
+/* Photo 4 මාරු වෙන Animation Keyframes */
+@keyframes slideAnimation {
+  0% { opacity: 0; }
+  6% { opacity: 1; }   /* Fade in */
+  25% { opacity: 1; }  /* Visible for 4 seconds */
+  31% { opacity: 0; }  /* Fade out */
+  100% { opacity: 0; }
+}
+
+/* Dark Gradient Overlay for Text Visibility */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 2;
+}
+
+/* Content Area */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 650px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Brand / Logo Title */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+.brand-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+/* Main Big Title */
+.main-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+.orange-text {
+  color: #ff7300; /* Screenshot එකේ තියෙන Orange Color එක */
+}
+
+/* Description Text */
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+  font-weight: 400;
+}
+
+/* Buttons Styling */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 24px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #ff7300;
+  color: #ffffff;
+  border: 2px solid #ff7300;
+}
+
+.btn-primary:hover {
+  background-color: #e06500;
+}
+
+.btn-outline {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile & Tablet responsiveness */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 0 6%;
+  }
+
+  .main-title {
+    font-size: 2.4rem;
+  }
+
+  .description {
+    font-size: 0.98rem;
+  }
+
+  .brand-name {
+    font-size: 0.88rem;
+  }
+}
+
+/* PC Design Adjustment */
+@media (min-width: 992px) {
+  .btn-group {
+    flex-direction: row; /* PC එකේදී Button දෙක පසෙකින් තැබීමට */
+    width: auto;
+  }
+
+  .btn {
+    width: auto;
+    padding: 14px 32px;
+  }
+}
+
+
+/*result count*/
+/* Results Section Black & Gold Theme */
+.results-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.results-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Gold Sub-tag */
+.sub-tag {
+  color: #d4af37;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  padding: 6px 18px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+/* White Section Title */
+.section-title {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 45px;
+  font-weight: 800;
+}
+
+/* Counters Grid Layout */
+.counters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Counter Card Styling */
+.counter-card {
+  background: #111111;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 35px 20px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.counter-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffd700;
+}
+
+/* Gold Gradient Numbers */
+.counter-number {
+  font-size: 3.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 60%, #d4af37 100%);
+  
+  /* Standard & WebKit Properties */
+  background-clip: text;
+  -webkit-background-clip: text;
+  
+  /* Text Color Transparency */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Text Label */
+.counter-label {
+  font-size: 1rem;
+  color: #e0e0e0;
+  font-weight: 600;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .results-section {
+    padding: 50px 15px;
+  }
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  .counter-number {
+    font-size: 2.6rem;
+  }
+}
+
+
+/*result poto*/
+/* Orbit Section Background */
+.students-orbit-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 70px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.orbit-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Orbit Wrapper (PC Size) */
+.orbit-wrapper {
+  position: relative;
+  width: 440px;
+  height: 440px;
+  margin: 50px auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center Gold Badge */
+.center-hub {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+  z-index: 5;
+}
+
+.hub-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.hub-sub {
+  font-size: 0.65rem;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin-top: 3px;
+}
+
+/* Outer Orbit Track Line & Rotation */
+.orbit-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px dashed rgba(212, 175, 55, 0.3);
+  animation: rotateOrbit 25s linear infinite; /* කැරකෙන වේගය (25s) වෙනස් කළ හැක */
+}
+
+/* User එක උඩට Mouse එක ගෙනිච්චම Pause වෙන්න */
+.orbit-wrapper:hover .orbit-ring,
+.orbit-wrapper:hover .student-circle img {
+  animation-play-state: paused;
+}
+
+/* Student Photo Circles */
+.student-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 75px;
+  height: 75px;
+  margin-top: -37.5px;
+  margin-left: -37.5px;
+  border-radius: 50%;
+  border: 2px solid #ffd700;
+  background: #111;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.student-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: counterRotate 25s linear infinite; /* ඡායාරූපය කෙළින්ම තබා ගැනීමට */
+}
+
+/* Angle Positioning for 8 Items (Radius: 180px) */
+.item-1 { transform: rotate(0deg) translate(180px) rotate(0deg); }
+.item-2 { transform: rotate(45deg) translate(180px) rotate(-45deg); }
+.item-3 { transform: rotate(90deg) translate(180px) rotate(-90deg); }
+.item-4 { transform: rotate(135deg) translate(180px) rotate(-135deg); }
+.item-5 { transform: rotate(180deg) translate(180px) rotate(-180deg); }
+.item-6 { transform: rotate(225deg) translate(180px) rotate(-225deg); }
+.item-7 { transform: rotate(270deg) translate(180px) rotate(-270deg); }
+.item-8 { transform: rotate(315deg) translate(180px) rotate(-315deg); }
+
+/* Animation Keyframes */
+@keyframes rotateOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes counterRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+/* Mobile Screen Responsiveness (Resize for Small Displays) */
+@media (max-width: 500px) {
+  .orbit-wrapper {
+    width: 290px;
+    height: 290px;
+    margin-top: 35px;
+  }
+
+  .center-hub {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hub-title {
+    font-size: 1rem;
+  }
+
+  .hub-sub {
+    font-size: 0.55rem;
+  }
+
+  .student-circle {
+    width: 55px;
+    height: 55px;
+    margin-top: -27.5px;
+    margin-left: -27.5px;
+  }
+
+  /* Mobile Radius Adjustment (Radius: 120px) */
+  .item-1 { transform: rotate(0deg) translate(120px) rotate(0deg); }
+  .item-2 { transform: rotate(45deg) translate(120px) rotate(-45deg); }
+  .item-3 { transform: rotate(90deg) translate(120px) rotate(-90deg); }
+  .item-4 { transform: rotate(135deg) translate(120px) rotate(-135deg); }
+  .item-5 { transform: rotate(180deg) translate(120px) rotate(-180deg); }
+  .item-6 { transform: rotate(225deg) translate(120px) rotate(-225deg); }
+  .item-7 { transform: rotate(270deg) translate(120px) rotate(-270deg); }
+  .item-8 { transform: rotate(315deg) translate(120px) rotate(-315deg); }
+}
+
+
+
+/*class time table*/
+/* Schedule Section Styling */
+.schedule-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.schedule-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.schedule-section .sub-tag {
+  color: #d4af37;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  padding: 6px 18px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.schedule-section .section-title {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 45px;
+  font-weight: 800;
+}
+
+/* Grid Layout (Default PC: 3 columns) */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  text-align: left;
+}
+
+/* Institute Card Styling */
+.institute-card {
+  background: #111111;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.institute-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffd700;
+}
+
+/* Header (Logo + Name + Location) */
+.inst-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inst-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.inst-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.inst-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.inst-location {
+  font-size: 0.8rem;
+  color: #d4af37;
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+/* Batch Content Box */
+.batch-content {
+  margin-top: 15px;
+}
+
+.batch-box {
+  padding: 6px 0;
+}
+
+.batch-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffd700;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.batch-time {
+  font-size: 0.85rem;
+  color: #dcdcdc;
+  line-height: 1.4;
+}
+
+/* Inner Divider line separating 2027 and 2028 */
+.inner-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(212, 175, 55, 0.2);
+  margin: 10px 0;
+}
+
+/* Mobile Screen Responsiveness: Box 2 per row */
+@media (max-width: 768px) {
+  .schedule-section {
+    padding: 50px 10px;
+  }
+
+  .schedule-section .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  /* Mobile එකේදී box 2ක් පසෙකින් පෙන්වීමට */
+  .schedule-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .institute-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .inst-header {
+    gap: 8px;
+    padding-bottom: 10px;
+  }
+
+  .inst-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .inst-name {
+    font-size: 0.82rem;
+  }
+
+  .inst-location {
+    font-size: 0.7rem;
+  }
+
+  .batch-title {
+    font-size: 0.78rem;
+  }
+
+  .batch-time {
+    font-size: 0.72rem;
+  }
+
+  .inner-divider {
+    margin: 8px 0;
+  }
+}
+
+
+/*text animation*/
+/* Base Styling for Scroll Text Animations */
+.scroll-anim {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+/* Effect 1: Fade Up */
+.scroll-anim.fade-up {
+  transform: translateY(80px);
+}
+
+/* Effect 2: Fade In Left */
+.scroll-anim.fade-in-left {
+  transform: translateX(-50px);
+}
+
+/* Effect 3: Zoom In */
+.scroll-anim.zoom-in {
+  transform: scale(0.85);
+}
+
+/* Active State (Scroll කරලා ඒ ස්ථානයට ආ පසු ක්‍රියාත්මක වේ) */
+.scroll-anim.appear {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+
+
+/*payment box*/
+/* Smooth Scrolling Effect */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Container Styling */
+.online-class-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    font-family: Arial, sans-serif;
+}
+
+/* Card Design */
+.teacher-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    padding: 25px 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Teacher Image Styling */
+.teacher-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #007bff;
+    margin-bottom: 15px;
+}
+
+.teacher-card h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+/* Buttons Alignment */
+.button-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Base Button Style */
+.btn {
+    flex: 1;
+    padding: 12px 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.1s;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* Red Button - Register */
+.btn-register {
+    background-color: #dc3545;
+}
+
+.btn-register:hover {
+    background-color: #c82333;
+}
+
+/* Green Button - Payment */
+.btn-payment {
+    background-color: #28a745;
+}
+
+.btn-payment:hover {
+    background-color: #218838;
+}
+
+/* POPUP MODAL STYLING */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.65); 
+    backdrop-filter: blur(3px);
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 450px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    animation: popupAnim 0.3s ease-out;
+    box-sizing: border-box;
+}
+
+@keyframes popupAnim {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Close Button (X) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #777777;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #000000;
+}
+
+.payment-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+/* Responsive tweaks for very small screens */
+@media (max-width: 360px) {
+    .button-group {
+        flex-direction: column;
+    }
+    .btn {
+        width: 100%;
+    }
+}
+
+
+/*memory*/
+/* Memories Gallery Section */
+.memories-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.memories-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Gallery Grid Layout (PC Setup) */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 35px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  height: 240px;
+  background: #111111;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+/* First Photo: Featured Large Box */
+.gallery-item.item-large {
+  grid-column: span 2;
+  grid-row: span 2;
+  height: 496px;
+}
+
+/* Image Hover Zoom Effect */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover {
+  border-color: #ffd700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* Text Overlay on Hover */
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+  color: #ffd700;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 768px) {
+  .memories-section {
+    padding: 50px 12px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .gallery-item {
+    height: 160px;
+    border-radius: 10px;
+  }
+
+  /* Mobile එකේදී ප්‍රධාන Photo එක උඩින්ම පළල්ව පෙනෙන පරිදි */
+  .gallery-item.item-large {
+    grid-column: span 2;
+    grid-row: span 1;
+    height: 210px;
+  }
+
+  .gallery-overlay {
+    opacity: 1; /* Touch screens සඳහා නිතරම text එක පෙනෙන පරිදි */
+    font-size: 0.78rem;
+    padding: 10px;
+  }
+}
+
+
+
+/*rsvp*/
+/* පෝරමය සඳහා සැකසුම් (Form Section Styles) */
+.rsvp-section {
+    padding: 60px 20px;
+    background-color: #f0f4f8;
+    font-family: 'A-FMBinara', 'Abhaya Libre', sans-serif;
+}
+
+.form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.rsvp-section .section-title {
+    text-align: center;
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 16px;
+    color: #34495e;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.input-group input, 
+.input-group select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ccd1d9;
+    border-radius: 8px;
+    box-sizing: border-box; /* පෝරමය එළියට පනින්නේ නැති වෙන්න */
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.input-group input:focus, 
+.input-group select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #e74c3c;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: inherit;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #c0392b;
+}
+
+/* ජංගම දුරකථන සඳහා (Mobile Responsive) */
+@media screen and (max-width: 768px) {
+    .form-wrapper {
+        padding: 25px 20px;
+    }
+    .rsvp-section .section-title {
+        font-size: 20px;
+    }
+}
+
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    font-family: 'A-FMBinara', 'Abhaya Libre', sans-serif;
+}
+
+.contact-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-top: 5px solid #25D366; /* WhatsApp කොළ පාට */
+}
+
+.contact-box .section-title {
+    font-size: 26px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.contact-description {
+    font-size: 16px;
+    color: #555555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* සාමාන්‍ය විස්තර (Phone & Email) */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    font-size: 18px;
+    color: #34495e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-icon {
+    font-size: 20px;
+}
+
+/* WhatsApp බොත්තම */
+.whatsapp-container {
+    margin-top: 20px;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #25D366; /* Official WhatsApp Color */
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebe57;
+    transform: translateY(-3px);
+}
+
+.wa-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* ජංගම දුරකථන සඳහා (Mobile Responsive) */
+@media screen and (max-width: 768px) {
+    .contact-box {
+        padding: 30px 20px;
+    }
+    
+    .contact-box .section-title {
+        font-size: 22px;
+    }
+
+    .whatsapp-btn {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+}
+.divider-line {
+    border-top: 1px solid #ffffff; /* සුදු පාට ඉර */
+    margin: 12px 0;                 /* උඩින් සහ යටින් ඉඩ (Gap) */
+    opacity: 0.6;                   /* ලස්සනට පෙනෙන්න පොඩි opacity එකක් (ඕන නැත්නම් මේ පේලිය අයින් කරන්න) */
+}
+
+
+
+/*profile poto*/
+/* Teacher Profile Section */
+.teacher-profile-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teacher-profile-container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+/* Gold Gradient Border Frame */
+.teacher-img-wrapper {
+  position: relative;
+  width: 320px;
+  height: 380px;
+  border-radius: 20px;
+  padding: 6px; /* Gold Border එකේ මහත */
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #d4af37 100%); /* Gold Gradient */
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.35); /* Subtle Gold Glow */
+  flex-shrink: 0;
+}
+
+.teacher-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  background-color: #111111;
+  display: block;
+}
+
+/* Details Section Styling */
+.teacher-details {
+  max-width: 500px;
+  text-align: left;
+}
+
+.teacher-details .sub-tag {
+  color: #d4af37;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  padding: 4px 14px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.teacher-name {
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin: 10px 0 15px 0;
+  font-weight: 800;
+}
+
+.teacher-bio {
+  font-size: 1rem;
+  color: #cccccc;
+  line-height: 1.7;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .teacher-profile-section {
+    padding: 50px 15px;
+  }
+
+  .teacher-profile-container {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .teacher-details {
+    text-align: center;
+  }
+
+  .teacher-img-wrapper {
+    width: 250px;
+    height: 300px;
+  }
+
+  .teacher-name {
+    font-size: 1.8rem;
+  }
+
+  .teacher-bio {
+    font-size: 0.92rem;
+  }
+}
+
+
+
+/*rejister form*/
+/* Registration Section Styling */
+.registration-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.registration-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* Card Container */
+.reg-card {
+  background: radial-gradient(circle at top, #1a1a1a 0%, #0d0d0d 100%);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 20px;
+  padding: 50px 30px;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.reg-title {
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.reg-description {
+  font-size: 1rem;
+  color: #cccccc;
+  max-width: 650px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* Gold Gradient Registration Button */
+.reg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+  color: #000000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 16px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.reg-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 100%);
+}
+
+.reg-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.reg-btn:hover svg {
+  transform: translateX(5px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .registration-section {
+    padding: 50px 15px;
+  }
+
+  .reg-card {
+    padding: 30px 18px;
+    border-radius: 16px;
+  }
+
+  .reg-title {
+    font-size: 1.4rem;
+  }
+
+  .reg-description {
+    font-size: 0.9rem;
+  }
+
+  .reg-btn {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+
+
+/* ===========================
+   About Us Section CSS
+   =========================== */
+
+.about-section {
+    position: relative;
+    padding: 5rem 1rem;
+    background-color: #020617; /* Dark slate background */
+    color: #ffffff;
+    overflow: hidden;
+}
+
+@media (min-width: 640px) {
+    .about-section {
+        padding: 5rem 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .about-section {
+        padding: 5rem 4rem;
+    }
+}
+
+/* Background Glow Effects */
+.about-bg-glow {
+    position: absolute;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.glow-1 {
+    top: 25%;
+    left: 0;
+    background-color: rgba(245, 158, 11, 0.1); /* Amber glow */
+}
+
+.glow-2 {
+    bottom: 25%;
+    right: 0;
+    background-color: rgba(168, 85, 247, 0.1); /* Purple glow */
+}
+
+.about-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* Section Header */
+.about-header {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto 4rem auto;
+}
+
+.about-badge {
+    color: #fbbf24;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    background-color: rgba(245, 158, 11, 0.1);
+    padding: 0.375rem 1rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+
+.about-title {
+    font-size: 1.875rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+}
+
+@media (min-width: 640px) {
+    .about-title {
+        font-size: 2.25rem;
+    }
+}
+
+.about-divider {
+    width: 6rem;
+    height: 0.25rem;
+    background: linear-gradient(to right, #fbbf24, #d97706);
+    margin: 1rem auto 0 auto;
+    border-radius: 9999px;
+}
+
+/* Grid Layout */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .about-grid {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+}
+
+.about-image-col {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 1024px) {
+    .about-image-col {
+        grid-column: span 5 / span 5;
+    }
+}
+
+/* Image Wrapper & Frame */
+.image-wrapper {
+    position: relative;
+}
+
+.image-glow {
+    position: absolute;
+    inset: -0.375rem;
+    background: linear-gradient(to right, #fbbf24, #d97706);
+    border-radius: 1.5rem;
+    filter: blur(8px);
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.image-wrapper:hover .image-glow {
+    opacity: 0.6;
+}
+
+.image-box {
+    position: relative;
+    width: 18rem;
+    height: 24rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 640px) {
+    .image-box {
+        width: 20rem;
+        height: 26.25rem;
+    }
+}
+
+.instructor-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.image-wrapper:hover .instructor-img {
+    transform: scale(1.05);
+}
+
+/* Floating Badge */
+.floating-badge {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    background-color: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.badge-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    background-color: rgba(245, 158, 11, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fbbf24;
+    font-weight: bold;
+}
+
+.badge-subtitle {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.badge-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Content Details */
+.about-content-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    .about-content-col {
+        grid-column: span 7 / span 7;
+    }
+}
+
+.content-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fbbf24;
+    margin: 0;
+}
+
+@media (min-width: 640px) {
+    .content-heading {
+        font-size: 1.875rem;
+    }
+}
+
+.content-text {
+    color: #d1d5db;
+    line-height: 1.75;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+@media (min-width: 640px) {
+    .content-text {
+        font-size: 1.125rem;
+    }
+}
+
+.highlight-text {
+    color: #ffffff;
+}
+
+/* Highlights Grid */
+.highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+@media (min-width: 640px) {
+    .highlights-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.highlight-card {
+    background-color: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.card-icon {
+    padding: 0.5rem;
+    background-color: rgba(245, 158, 11, 0.1);
+    color: #fbbf24;
+    border-radius: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.card-title {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.card-desc {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin: 0.25rem 0 0 0;
+}
+
+/* CTA Button */
+.cta-wrapper {
+    padding-top: 1rem;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(to right, #fbbf24, #d97706);
+    color: #020617;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.2);
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.cta-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(245, 158, 11, 0.4);
+}
+
+.cta-btn:active {
+    transform: scale(0.98);
+}
+
+.btn-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+
+/*time table*/
+/* ===========================
+   Class Schedule Section CSS
+   =========================== */
+
+.schedule-section {
+    position: relative;
+    padding: 5rem 1rem;
+    background-color: #020617; /* Dark slate background */
+    color: #ffffff;
+    overflow: hidden;
+}
+
+@media (min-width: 640px) {
+    .schedule-section {
+        padding: 5rem 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .schedule-section {
+        padding: 5rem 4rem;
+    }
+}
+
+/* Background Glow Effects */
+.schedule-bg-glow {
+    position: absolute;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.schedule-bg-glow.glow-1 {
+    top: 10%;
+    right: 5%;
+    background-color: rgba(245, 158, 11, 0.08); /* Amber glow */
+}
+
+.schedule-bg-glow.glow-2 {
+    bottom: 10%;
+    left: 5%;
+    background-color: rgba(168, 85, 247, 0.08); /* Purple glow */
+}
+
+.schedule-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* Section Header */
+.schedule-header {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto 4rem auto;
+}
+
+.schedule-badge {
+    color: #fbbf24;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    background-color: rgba(245, 158, 11, 0.1);
+    padding: 0.375rem 1rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+
+.schedule-title {
+    font-size: 1.875rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+}
+
+@media (min-width: 640px) {
+    .schedule-title {
+        font-size: 2.25rem;
+    }
+}
+
+.schedule-divider {
+    width: 6rem;
+    height: 0.25rem;
+    background: linear-gradient(to right, #fbbf24, #d97706);
+    margin: 1rem auto 0 auto;
+    border-radius: 9999px;
+}
+
+/* Grid Layout */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .schedule-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Schedule Card Styling */
+.schedule-card {
+    background-color: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.schedule-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(245, 158, 11, 0.4);
+}
+
+.card-header-badge {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.day-tag {
+    background-color: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.35rem 0.85rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.time-tag {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.grade-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+@media (min-width: 640px) {
+    .grade-title {
+        font-size: 1.35rem;
+    }
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    flex-grow: 1;
+}
+
+.features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+}
+
+.bullet-icon {
+    color: #fbbf24;
+    font-weight: bold;
+    background-color: rgba(245, 158, 11, 0.1);
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    font-size: 0.75rem;
+}
+
+.card-footer {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.schedule-btn {
+    display: block;
+    text-align: center;
+    background: linear-gradient(to right, #fbbf24, #d97706);
+    color: #020617;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.2);
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.schedule-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(245, 158, 11, 0.4);
+}
+
+.schedule-btn:active {
+    transform: scale(0.98);
+}
+
+
+
+/*register form */
+/* ===========================
+   Registration Section CSS
+   =========================== */
+
+.register-section {
+    position: relative;
+    padding: 5rem 1rem;
+    background-color: #020617;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+@media (min-width: 640px) {
+    .register-section {
+        padding: 5rem 2rem;
+    }
+}
+
+.register-bg-glow {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(245, 158, 11, 0.08);
+}
+
+.register-container {
+    max-width: 40rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.register-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.register-badge {
+    color: #fbbf24;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    background-color: rgba(245, 158, 11, 0.1);
+    padding: 0.35rem 1rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+
+.register-title {
+    font-size: 1.85rem;
+    font-weight: 800;
+}
+
+.register-subtitle {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+.register-divider {
+    width: 5rem;
+    height: 0.25rem;
+    background: linear-gradient(to right, #fbbf24, #d97706);
+    margin: 1rem auto 0 auto;
+    border-radius: 9999px;
+}
+
+/* Form Card Styling */
+.form-card {
+    background-color: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 640px) {
+    .form-card {
+        padding: 2.5rem;
+    }
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background-color: rgba(2, 6, 23, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.75rem;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    border-color: #fbbf24;
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
+}
+
+.form-control option {
+    background-color: #0f172a;
+    color: #ffffff;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: linear-gradient(to right, #25D366, #128C7E); /* WhatsApp Green */
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0.9rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 20px -3px rgba(37, 211, 102, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.whatsapp-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+
+
+
+/* ===========================
+   Footer Section CSS
+   =========================== */
+
+.footer-section {
+    background-color: #020617;
+    color: #ffffff;
+    padding: 4rem 1rem 2rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+@media (min-width: 640px) {
+    .footer-section {
+        padding: 5rem 2rem 2rem 2rem;
+    }
+}
+
+.footer-container {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-brand-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fbbf24;
+    margin: 0;
+}
+
+.footer-desc {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.footer-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-text {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Social Icon Buttons */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-svg {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.social-icon-btn.facebook {
+    background-color: rgba(24, 119, 242, 0.1);
+    color: #60a5fa;
+    border-color: rgba(24, 119, 242, 0.3);
+}
+
+.social-icon-btn.facebook:hover {
+    background-color: #1877f2;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.social-icon-btn.whatsapp {
+    background-color: rgba(37, 211, 102, 0.1);
+    color: #4ade80;
+    border-color: rgba(37, 211, 102, 0.3);
+}
+
+.social-icon-btn.whatsapp:hover {
+    background-color: #25D366;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Footer Bottom Bar & Developer Credit */
+.footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+@media (min-width: 768px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+.copyright-text {
+    margin: 0;
+}
+
+.developer-credit {
+    margin: 0;
+    color: #cbd5e1;
+}
+
+.brand-highlight {
+    color: #fbbf24;
+    font-weight: 600;
+}
+
+.dev-phone {
+    color: #fbbf24;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.dev-phone:hover {
+    text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+
+  <section class="hero-section">
+    
+    <!-- 4 Background Images Slider -->
+    <div class="bg-slider">
+      <div class="slide slide-1"></div>
+      <div class="slide slide-2"></div>
+      <div class="slide slide-3"></div>
+      <div class="slide slide-4"></div>
+    </div>
+
+    <!-- Text එක ලස්සනට පේන්න දාන Dark Overlay එක -->
+    <div class="overlay"></div>
+
+    <!-- එක තැන තියෙන Text සහ Buttons ටික -->
+    <div class="hero-content">
+      
+      <div class="brand">
+        <img src="logo.jpg" alt="Logo" class="logo" data-aos="fade-up" data-aos-duration="1300">
+        <span class="brand-name" data-aos="fade-up" data-aos-duration="1300">UDAKANDA — ACADEMY OF DANCE</span>
+      </div>
+
+      <h1 class="main-title" data-aos="fade-up" data-aos-duration="1500">
+        <span class="orange-text" >නැටුම්  </span>පන්ති
+      </h1>
+
+      <p class="description" data-aos="fade-up" data-aos-duration="1800">
+        දරුවන්ගෙ දක්ෂතා සහ ලාංකේය නර්තන උරුමය උදෙසා
+      </p>
+
+      <div class="btn-group">
+        <a href="#register-form" class="btn btn-primary" data-aos="fade-up" data-aos-duration="2100">පන්තිය සදහා රෙජිස්ටර් වෙන්න</a>
+        <a href="#contact1" class="btn btn-outline" data-aos="fade-up" data-aos-duration="2300">WhatsApp හරහා අසන්න</a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- About Us Section -->
+<section id="about" class="about-section">
+    <!-- Background Glow Effects -->
+    <div class="about-bg-glow glow-1"></div>
+    <div class="about-bg-glow glow-2"></div>
+
+    <div class="about-container">
+        <!-- Section Header -->
+        <div class="about-header scroll-anim fade-up">
+            <span class="about-badge">About The Instructor</span>
+            <h2 class="about-title"> හර්ෂණී ගීතාන්ජලී</h2>
+            <div class="about-divider"></div>
+        </div>
+
+        <div class="about-grid">
+            
+            <!-- Left Side: Image with Frame -->
+            <div class="about-image-col scroll-anim fade-up">
+                <div class="image-wrapper">
+                    <!-- Decorative Border Glow -->
+                    <div class="image-glow"></div>
+                    
+                    <!-- Image Container -->
+                    <div class="image-box">
+                        <!-- මෙහි src එකට ගුරුතුමියගේ සැබෑ ඡායාරූපයක URL එක හෝ path එක දෙන්න -->
+                        <img src="1.jpg" 
+                             alt="Harshani Geethanjalee - Dance Instructor" 
+                             class="instructor-img"
+                             onerror="this.src='s1.jpg'">
+                        
+                        <!-- Floating Badge on Image -->
+                        <div class="floating-badge scroll-anim fade-up">
+                            
+                            <div>
+                                <h4 class="badge-subtitle">Alumna</h4>
+                                <p class="badge-title">University of Sri Jayewardenepura</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Content Details -->
+            <div class="about-content-col">
+                <h3 class="content-heading scroll-anim fade-up">
+                    කලාත්මක ගමනක සවිඥානික මගපෙන්වීම
+                </h3>
+                
+                <p class="content-text scroll-anim fade-up">
+                    ශ්‍රී ලංකා ජයවර්ධනපුර විශ්වවිද්‍යාලයෙන් උසස් අධ්‍යාපනය හැදෑරූ, නර්ථන කලාවට අතිශයින් ලැදි, දක්ෂ හා සුදුසුකම්ලත් ගුරුවරියක වන <strong class="highlight-text">හර්ෂණී ගීතාන්ජලී</strong> මිය, පෙරපාසල් වියේ පටන් සාමාන්‍ය පෙළ (O/L) දක්වා දරුවන්ගේ නර්ථන කුසලතා මුවහත් කරමින් කටයුතු කරන ප්‍රවීණ නර්ථන උපදේශිකාවකි.
+                </p>
+
+                <p class="content-text scroll-anim fade-up">
+                    සාම්ප්‍රදායික නර්ථන ශෛලීන් සහ නිර්මාණශීලී පියවරයන් දරුවන්ගේ මනසට පහසුවෙන් ග්‍රහණය වන පරිදි, විනයගරුක සහ ප්‍රීතිමත් ඉගැන්වීම් රටාවක් තුළින් දරුවන්ට දායාද කිරීම ඇයගේ විශේෂත්වයයි. පෙරපාසල් මට්ටමේ සිටම දරුවන්ට මූලික ශරීර හැඩතල, රිද්මයානුකූල චලන සහ වේදිකා අත්දැකීම් ලබා දෙමින්, ඔවුන් සාමාන්‍ය පෙළ විභාගය දක්වා සාර්ථකව මෙහෙයවීමට ඇය නිරන්තරයෙන් කැපවී සිටී.
+                </p>
+
+                <!-- Key Highlights Grid -->
+                <div class="highlights-grid">
+                    <div class="highlight-card scroll-anim fade-up">
+                       
+                        <div>
+                            <h4 class="card-title">ශාස්ත්‍රීය දැනුම</h4>
+                            <p class="card-desc">ශ්‍රී ලංකා ජයවර්ධනපුර විශ්වවිද්‍යාලීය ආදි ශිෂ්‍යාවකි.</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-card scroll-anim fade-up">
+                        
+                        <div>
+                            <h4 class="card-title">පුළුල් පරාසයක ඉගැන්වීම්</h4>
+                            <p class="card-desc">පෙරපාසලේ සිට O/L දක්වා සියලුම වයස් කාණ්ඩ සඳහා.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action Button inside About -->
+                <div class="cta-wrapper">
+                    <a href="#register-form" class="cta-btn scroll-anim fade-up">
+                        <span>Classes හා සම්බන්ධ වන්න</span>
+                        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Class Schedule / Time Table Section -->
+<section id="schedule" class="schedule-section">
+    <!-- Background Glow Effects -->
+    <div class="schedule-bg-glow glow-1"></div>
+    <div class="schedule-bg-glow glow-2"></div>
+
+    <div class="schedule-container">
+        <!-- Section Header -->
+        <div class="schedule-header scroll-anim fade-up">
+            <span class="schedule-badge">Class Schedule</span>
+            <h2 class="schedule-title">පන්ති කාලසටහන</h2>
+            <div class="schedule-divider"></div>
+        </div>
+
+        <!-- Schedule Cards Grid -->
+        <div class="schedule-grid">
+            
+            <!-- Class 1: Grade 6 to O/L -->
+            <div class="schedule-card">
+                <div class="card-header-badge scroll-anim fade-up">
+                    <span class="day-tag">බ්‍රහස්පතින්දා (Thursday)</span>
+                    <span class="time-tag"> ප.ව. 4.00 - 6.00</span>
+                </div>
+                <h3 class="grade-title scroll-anim fade-up">6 ශ්‍රේණිය සිට සාමාන්‍ය පෙළ දක්වා</h3>
+                
+                <ul class="features-list scroll-anim fade-up">
+                    <li>
+                        <span class="bullet-icon">✓</span>
+                        <span>ප්‍රායෝගික හා සිද්ධාන්ත (Practical & Theory)</span>
+                    </li>
+                    <li>
+                        <span class="bullet-icon">✓</span>
+                        <span>පාසල් විෂය නිර්දේශය (School Syllabus)</span>
+                    </li>
+                    <li>
+                        <span class="bullet-icon">✓</span>
+                        <span>අනුමාන ප්‍රශ්න පත්‍ර (Model Papers)</span>
+                    </li>
+                    <li>
+                        <span class="bullet-icon">✓</span>
+                        <span>බෙර වාද්‍ය හා ගායනය (Drumming & Singing)</span>
+                    </li>
+                </ul>
+
+                <div class="card-footer scroll-anim fade-up">
+                    <a href="#register-form" class="schedule-btn">පන්තිය හා සම්බන්ධ වන්න</a>
+                </div>
+            </div>
+
+            <!-- Class 2: Preschool to Grade 5 -->
+            <div class="schedule-card">
+                <div class="card-header-badge scroll-anim fade-up">
+                    <span class="day-tag">සිකුරාදා (Friday)</span>
+                    <span class="time-tag"> ප.ව. 3.30 - 5.00</span>
+                </div>
+                <h3 class="grade-title scroll-anim fade-up">පෙර පාසල් සිට 5 ශ්‍රේණිය දක්වා</h3>
+                
+                <ul class="features-list scroll-anim fade-up">
+                    <li>
+                        <span class="bullet-icon">✓</span>
+                        <span>ප්‍රායෝගික හා නිර්මාණාත්මක නර්ථනය (Practical & Creative Dance)</span>
+                    </li>
+                </ul>
+
+                <div class="card-footer scroll-anim fade-up">
+                    <a href="#register-form" class="schedule-btn">පන්තිය හා සම්බන්ධ වන්න</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ------------------------------------------------------------- -->
+<!-- උදාහරණයක් ලෙස යටින් ඇති Register Form එක (ඔබේ Form එකේ id="register-form" ලෙස තිබිය යුතුය) -->
+<!-- <div id="register-form">
+    ... ඔබේ Register Form එක මෙතැන ඇත ...
+</div> -->
+
+
+<!-- Memories Gallery Section -->
+<section class="memories-section">
+  <div class="memories-container">
+    
+    <span class="sub-tag">අපේ මතකයන්</span>
+    <h2 class="section-title">සිසුන් සමඟ සුන්දර මතක සටහන්</h2>
+
+    <div class="gallery-grid">
+      
+      <!-- Photo 1 (Main Featured Photo) -->
+      <div class="gallery-item item-large scroll-anim fade-up">
+        <img src="3.jpg" alt="Students Memory 1">
+        <div class="gallery-overlay">
+          
+        </div>
+      </div>
+
+      <!-- Photo 2 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="100">
+        <img src="4.jpg" alt="Students Memory 2">
+        <div class="gallery-overlay">
+          
+        </div>
+      </div>
+
+      <!-- Photo 3 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="200">
+        <img src="1.jpg" alt="Students Memory 3">
+        <div class="gallery-overlay">
+          
+        </div>
+      </div>
+
+      <!-- Photo 4 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="300">
+        <img src="2.jpg" alt="Students Memory 4">
+        <div class="gallery-overlay">
+          
+        </div>
+      </div>
+
+      <!-- Photo 5 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="400">
+        <img src="5.jpg" alt="Students Memory 5">
+        <div class="gallery-overlay">
+          
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Registration Form Section -->
+<section id="register " class="register-section" >
+    <div class="register-bg-glow glow-1"></div>
+    
+    <div class="register-container" id="register-form">
+        <!-- Section Header -->
+        <div class="register-header scroll-anim fade-up">
+            <span class="register-badge">Class Registration</span>
+            <h2 class="register-title">පන්තියට ලියාපදිංචි වන්න</h2>
+            <p class="register-subtitle">පහත විස්තර පුරවා ලියාපදිංචි වන්න. Form එක යැවූ පසු WhatsApp ඔස්සේ අප හා සම්බන්ධ වේ.</p>
+            <div class="register-divider"></div>
+        </div>
+
+        <!-- Form Card -->
+        <div class="form-card">
+            <form id="whatsappForm">
+                
+                <!-- Student Name Input -->
+                <div class="input-group scroll-anim fade-up">
+                    <label for="studentName" class="form-label">ළමයාගේ නම (Student Name) *</label>
+                    <input type="text" id="studentName" class="form-control" placeholder="උදා: කසුන් පෙරේරා" required>
+                </div>
+
+                <!-- School Input -->
+                <div class="input-group scroll-anim fade-up">
+                    <label for="studentSchool" class="form-label">පාසල (School) *</label>
+                    <input type="text" id="studentSchool" class="form-control" placeholder="උදා: ආනන්ද විද්‍යාලය - හොරණ" required>
+                </div>
+
+                <!-- Grade / Class Select -->
+                <div class="input-group scroll-anim fade-up">
+                    <label for="studentClass" class="form-label">සම්බන්ධ වන පන්තිය (Class/Grade) *</label>
+                    <select id="studentClass" class="form-control" required>
+                        <option value="" disabled selected>පන්තිය තෝරන්න...</option>
+                        <option value="පෙර පාසල් සිට 5 ශ්‍රේණිය දක්වා (සිකුරාදා)">පෙර පාසල් සිට 5 ශ්‍රේණිය දක්වා (සිකුරාදා)</option>
+                        <option value="6 ශ්‍රේණිය සිට O/L දක්වා (බ්‍රහස්පතින්දා)">6 ශ්‍රේණිය සිට O/L දක්වා (බ්‍රහස්පතින්දා)</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn scroll-anim fade-up">
+                    <span>WhatsApp ඔස්සේ යවන්න</span>
+                    <svg class="whatsapp-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
+                </button>
+
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<!-- Teacher Profile / About Section -->
+<section class="teacher-profile-section">
+  <div class="teacher-profile-container">
+    
+    <!-- Gold Bordered Photo Box -->
+    <div class="teacher-img-wrapper scroll-anim zoom-in">
+      <img src="t3.JPG" alt="Teacher Photo" class="teacher-img">
+    </div>
+
+    <!-- Teacher Bio / Details Side -->
+    <div class="teacher-details scroll-anim fade-up" data-delay="200">
+      <span class="sub-tag">ගුරු පියාණන්</span>
+      <h2 class="teacher-name">හර්ෂණී ගීතාන්ජලී</h2>
+      <p class="teacher-bio">
+        සාම්ප්‍රදායික හා නිර්මාණශීලී නර්ථන කලාවෙන් දරුවන්ගේ කලා කුසලතා මුවහත් කරමින්, විනයගරුක හා අභිමානවත් අනාගතයකට මගපෙන්වන අපගේ පන්ති සමඟ ඔබේ දරුවාත් අදම සම්බන්ධ කරන්න.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- සම්බන්ධ කරගැනීමේ කොටස (Contact Section) -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="contact-box" id="contact1">
+            <h2 class="section-title">ගුරුතුමා සම්බන්ධ කරගන්න</h2>
+            <p class="contact-description">පන්ති පිළිබඳ වැඩිදුර විස්තර දැනගැනීමට පහත දුරකථන අංකයට අමතන්න හෝ WhatsApp හරහා පණිවිඩයක් එවන්න.</p>
+
+            <!-- සාමාන්‍ය විස්තර -->
+            <div class="contact-details">
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <p><strong>දුරකථන:</strong> 074 108 9047</p>
+                </div>
+              
+            </div>
+
+            <!-- WhatsApp බොත්තම -->
+            <div class="whatsapp-container">
+                <!-- 947XXXXXXXX වෙනුවට ඔයාගේ නම්බර් එක දාන්න (බිංදුව නැතුව 94 න් පටන්ගන්න) -->
+                <a href="https://wa.me/94741089047" target="_blank" class="whatsapp-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="wa-icon" viewBox="0 0 16 16">
+                        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                    </svg>
+                    WhatsApp හරහා සම්බන්ධ වන්න
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ <!-- Footer Section -->
+<footer class="footer-section">
+    <div class="footer-container">
+        <div class="footer-grid">
+           
+
+            <!-- Social Media Links -->
+            <div class="footer-col">
+                <h4 class="footer-heading">අපගේ සමාජ ජාලා පිටු</h4>
+                <div class="social-icons">
+                    <!-- Facebook Link -->
+                    <a href="https://facebook.com/share/1DEpW6NQhs/" target="_blank" class="social-icon-btn facebook" aria-label="Facebook">
+                        <svg class="social-svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        <span>Facebook</span>
+                    </a>
+                    
+                    <!-- WhatsApp Link -->
+                    <a href="https://wa.me/94741089047" target="_blank" class="social-icon-btn whatsapp" aria-label="WhatsApp">
+                        <svg class="social-svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                        </svg>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Bar & Developer Credit -->
+        <div class="footer-bottom">
+            <p class="copyright-text">© 2026 Udakandage Academy of Dance. All Rights Reserved.</p>
+            <p class="developer-credit">Website Designed & Developed by <span class="brand-highlight">Home Artist</span> | Contact: <a href="tel:0781227941" class="dev-phone">078 122 7941</a></p>
+        </div>
+    </div>
+</footer>
+
+
+  <!-- AOS JS Library -->
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    //mula thiyana text animation eka 
+  AOS.init({
+    once: true // Web page එක open වෙද්දි එක පාරක් විතරක් animate වෙන්න
+  });
+
+
+  //result count 
+ 
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.counter-number');
+
+    const startCounting = (counter) => {
+      const target = +counter.getAttribute('data-target');
+      const duration = 2000; // Count වෙන්න යන මුළු කාලය (Milliseconds - 2 Seconds)
+      const stepTime = 20;
+      const totalSteps = duration / stepTime;
+      const increment = target / totalSteps;
+
+      let current = 0;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          counter.innerText = target + "+"; // අගය ඉවර වුණාම අගට + සලකුණ වැටේ
+          clearInterval(timer);
+        } else {
+          counter.innerText = Math.ceil(current);
+        }
+      }, stepTime);
+    };
+
+    // User Scroll කරලා Section එකට ආවම විතරක් Count වෙන්න හදපු Observer එක
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startCounting(entry.target);
+          observer.unobserve(entry.target); // එක පාරක් වැඩ කළ පසු නතර වේ
+        }
+      });
+    }, { threshold: 0.3 });
+
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  });
+
+//text animation 
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedTexts = document.querySelectorAll('.scroll-anim');
+
+    const textObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.getAttribute('data-delay') || 0;
+          
+          setTimeout(() => {
+            entry.target.classList.add('appear');
+          }, delay);
+
+          textObserver.unobserve(entry.target); // එක පාරක් animate වූ පසු නතර වේ
+        }
+      });
+    }, {
+      threshold: 0.15 // Text එකෙන් 15%ක් Screen එකට ආ පසු Animation එක පටන් ගනී
+    });
+
+    animatedTexts.forEach(text => textObserver.observe(text));
+  });
+
+
+
+//payment box
+    // Payment Details Modal එක Open කරන Function එක
+function openPaymentModal() {
+    document.getElementById("paymentModal").style.display = "flex";
+}
+
+// Modal එක Close කරන Function එක
+function closePaymentModal() {
+    document.getElementById("paymentModal").style.display = "none";
+}
+
+// Modal එකෙන් එලිය ක්ලික් කල විටත් auto close වන කෝඩ් එක
+window.onclick = function(event) {
+    var modal = document.getElementById("paymentModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+// register form
+document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // 1. Inputs වලින් විස්තර ලබා ගැනීම
+    const name = document.getElementById('studentName').value.trim();
+    const school = document.getElementById('studentSchool').value.trim();
+    const studentClass = document.getElementById('studentClass').value;
+
+    // 2. WhatsApp අංකය (94741089047 format එකෙන්)
+    const phoneNumber = "94741089047";
+
+    // 3. Message එක නිර්මාණය කිරීම
+    const message = `*නව පන්ති ලියාපදිංචිය - Udakandage Academy of Dance*%0A%0A` +
+                    ` *ළමයාගේ නම:* ${encodeURIComponent(name)}%0A` +
+                    ` *පාසල:* ${encodeURIComponent(school)}%0A` +
+                    ` *පන්තිය:* ${encodeURIComponent(studentClass)}`;
+
+    // 4. WhatsApp Link එක සෑදීම
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    // 5. නව ටැබ් එකකින් WhatsApp ඇප් එක හෝ Web එක open කිරීම
+    window.open(whatsappUrl, '_blank');
+});
+
+</script>
+
+</body>
+</html>
